@@ -1,3 +1,1 @@
-// @flow
-import * as PracticeFns from './practice'
-import * as FizzBuzz from './fizzbuzz'
+import * as Search from './search'

@@ -10,9 +10,7 @@ type $Options = {
     items?: number
 }
 
-
 type $OutputFormat = Array<number | string>
-
 
 type $ColDat = {
     isFizz: boolean,
@@ -79,7 +77,7 @@ export class FizzBuzz {
         }, this)
     }
 
-    _format(item: $ColDat) {
+    _format(item: $ColDat): string {
         let output = `${item.num}: `
         if(item.isFizz) {
             output += 'Fizz'
@@ -96,9 +94,9 @@ export class FizzBuzz {
 }
 
 
-const inst = new FizzBuzz({
-    start: 0,
-    stop: 50
-})
+// const inst = new FizzBuzz({
+//     start: 0,
+//     stop: 50
+// })
 
-inst.loop()
+// inst.loop()
