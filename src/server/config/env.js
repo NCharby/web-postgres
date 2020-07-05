@@ -1,7 +1,12 @@
 //flow
 type $ENV_FILE = {
     parsed: {
-        PIXABAY_API_KEY: string,
+        PORT:number,
+        POSTGRES_PORT:number,
+        POSTGRES_USER:string,
+        POSTGRES_HOST:string,
+        POSTGRES_DATABASE:string,
+        POSTGRES_PASSWORD:string
     }
 }
 
@@ -13,4 +18,12 @@ export const PRODUCTION: boolean = process.env.NODE_ENV === 'production'
 export const PORT: number = ENV_FILE.parsed.NODE_PORT != null
   ? parseInt(ENV_FILE.parsed.NODE_PORT, 10)
   : 5001;
+
+export const DB = {
+    port: ENV_FILE.parsed.POSTGRES_PORT,
+    user: ENV_FILE.parsed.POSTGRES_USER,
+    host: ENV_FILE.parsed.POSTGRES_HOST,
+    database: ENV_FILE.parsed.POSTGRES_DATABASE,
+    password: ENV_FILE.parsed.POSTGRES_PASSWORD,
+}
 

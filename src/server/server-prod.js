@@ -2,10 +2,18 @@
 
 import path from 'path'
 import express from 'express'
+import bodyParser from 'body-parser'
 
 const app = express(),
             DIST_DIR = __dirname,
             HTML_FILE = path.join(DIST_DIR, 'index.html')
+
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 
 app.use(express.static(DIST_DIR))
 
